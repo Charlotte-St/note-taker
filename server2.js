@@ -39,7 +39,7 @@ app.post('/api/notes', (req, res) => {
         };
     console.log(newNote);
     
-    //readAndAppend(newNote, './db/db.json');
+    readAndAppend(newNote, './db/db.json');
 
    // const response = {
        // status: 'success',
