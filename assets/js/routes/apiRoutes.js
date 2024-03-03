@@ -1,11 +1,11 @@
-const notes = require('express').Router();
+const router = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 
-notes.get('/', (req, res) => {
+router.get('/notes', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-notes.post('/', (req, res) => {
+router.post('/notes', (req, res) => {
     console.log(req.body);
 
     const {title, text} = req.body;
@@ -22,4 +22,4 @@ notes.post('/', (req, res) => {
     }
 })
 
-module.exports = notes;
+module.exports = router;
