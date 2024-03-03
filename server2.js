@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-const {readFromFile, readAndAppend} = require('./assets/js/helpers/fsUtils');
+const {readFromFile, readAndAppend } = require('./assets/js/helpers/fsUtils');
 
 const PORT = 3001;
 
@@ -53,6 +53,12 @@ app.post('/api/notes', (req, res) => {
    res.json('Error in saving note');
 }
 });
+
+//API route to delete notes
+
+app.delete('/api/notes', (req, res) => {
+    readAndDelete()
+})
 
 app.listen(PORT, () => 
 console.log(`App listening at http://${PORT}`));
