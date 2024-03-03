@@ -23,13 +23,13 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public/notes.
 //API route to GET notes
 
 app.get('/api/notes', (req, res) => {
-    console.info(`${req.method} received`);
+    //console.info(`${req.method} received`);
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 })
 
 //API route to POST notes
 app.post('/api/notes', (req, res) => {
-    console.info(`${req.method} received`);
+    //console.info(`${req.method} received`);
 
     const { title, text} = req.body;
 
@@ -39,7 +39,7 @@ app.post('/api/notes', (req, res) => {
             text,
             id: uuidv4()
         };
-    console.log(newNote);
+    //console.log(newNote);
     
     readAndAppend(newNote, './db/db.json');
 
