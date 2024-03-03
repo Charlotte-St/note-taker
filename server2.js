@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 const {readFromFile, readAndAppend} = require('./assets/js/helpers/fsUtils');
 
@@ -36,19 +37,20 @@ app.post('/api/notes', (req, res) => {
         const newNote = {
             title,
             text,
+            id: uuidv4()
         };
     console.log(newNote);
     
     readAndAppend(newNote, './db/db.json');
 
-   // const response = {
-       // status: 'success',
-      //  body: newNote,
-    //};
+    const response = {
+       status: 'success',
+      body: newNote,
+    };
 
-    //res.json(response);
-//} else {
-   // res.json('Error in saving note');
+    res.json(response);
+} else {
+   res.json('Error in saving note');
 }
 });
 
