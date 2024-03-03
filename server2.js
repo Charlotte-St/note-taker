@@ -57,8 +57,8 @@ app.post('/api/notes', (req, res) => {
 //API route to delete notes
 
 app.delete('/api/notes', (req, res) => {
-    readAndDelete()
-})
+    console.log(`${res.method} sent`)
+});
 
 app.listen(PORT, () => 
 console.log(`App listening at http://${PORT}`));
