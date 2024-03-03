@@ -27,7 +27,8 @@ router.post('/notes', (req, res) => {
             note_id: uuidv4(),
         };
 
-    readAndAppend(newNote, './db/db.json');
+    const stringNote = JSON.stringify(newNote);
+    readAndAppend(stringNote, './db/db.json');
     res.json(`Note added successfully`)
     } else {
         res.status(500)
