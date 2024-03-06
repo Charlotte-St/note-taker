@@ -6,6 +6,8 @@
 
 This app allows the user to take notes and review notes they have already taken. Notes are saved to a JSON file on the server so the notes persist. 
 
+[Deployed Application](https://note-taker-g07d.onrender.com)
+
 ## Installation 
 
 This app is deployed to Heroku, so no installation is required. 
@@ -13,6 +15,8 @@ This app is deployed to Heroku, so no installation is required.
 If the user downloads the app to run it locally on their machine, it is necessary to install Node.js and NPM. Express.js and uuid are dependencies listed in the package.json file that will need to be installed before running the app. 
 
 ## Usage
+
+![screenshot of the Note Taker app](/images/note-taker-app.png)
 
 1. The user must click the button on the index page to enter the notes page of the Note Taker app. 
 
