@@ -4,11 +4,13 @@
 
 ## Description
 
-This app allows the user to take notes and review notes they have already taken. 
+This app allows the user to take notes and review notes they have already taken. Notes are saved to a JSON file on the server so the notes persist. 
 
 ## Installation 
 
 This app is deployed to Heroku, so no installation is required. 
+
+If the user downloads the app to run it locally on their machine, it is necessary to install Node.js and NPM. Express.js and uuid are dependencies listed in the package.json file that will need to be installed before running the app. 
 
 ## Usage
 
@@ -35,6 +37,10 @@ Starter files were provided by the Northwestern Part-Time Full-Stack Bootcamp.
 [Node.js](https://nodejs.org/en)
 
 [NPM](https://www.npmjs.com/)
+
+[Express.js](https://expressjs.com/)
+
+[uuid](https://www.npmjs.com/package/uuid)
 
 ## Contributing
 
