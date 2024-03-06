@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const {readFromFile, readAndAppend } = require('./assets/js/helpers/fsUtils');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -23,14 +23,11 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'public/notes.
 //API route to GET notes
 
 app.get('/api/notes', (req, res) => {
-    //console.info(`${req.method} received`);
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 })
 
 //API route to POST notes
 app.post('/api/notes', (req, res) => {
-    //console.info(`${req.method} received`);
-
     const { title, text} = req.body;
 
     if (title && text) {
@@ -39,7 +36,6 @@ app.post('/api/notes', (req, res) => {
             text,
             id: uuidv4()
         };
-    //console.log(newNote);
     
     readAndAppend(newNote, './db/db.json');
 
@@ -54,12 +50,12 @@ app.post('/api/notes', (req, res) => {
 }
 });
 
-//API route to delete notes
+//API route to delete notes - commented out until I know more about deleting data
 
-app.delete('/api/notes/:id', (req, res) => {
-    console.log(`${req.method} sent`);
+//app.delete('/api/notes/:id', (req, res) => {
+    //console.log(`${req.method} sent`);
    //console.log(`${req.id}`);
-});
+//});
 
 app.listen(PORT, () => 
 console.log(`App listening at http://localhost:${PORT}`));
